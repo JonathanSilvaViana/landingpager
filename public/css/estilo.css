@@ -1,0 +1,76 @@
+html{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#logo-container{
+    font-size: 1.3em;
+    text-align: center;
+    position: fixed;
+}
+
+
+body{
+    background: #fff;
+}
+
+.brand-logo{
+
+    font-family: 'McLaren', cursive;
+    font-size: 10em;
+
+}
+
+a{
+    font-family: 'McLaren', cursive;
+}
+
+.link-menu-site:hover{
+    background: #1de9b6;
+    border-radius: 10% -20%;
+}
+
+.header{
+    font-family: 'McLaren', cursive;
+}
+
+.titulo-pagina{
+    /*color: #c62828;   */
+    color: #1e88e5;
+}
+
+.pequeno_titulo{
+    font-family: 'McLaren', cursive;
+}
+
+.texto-baixo{
+    font-size: 1.4em;
+}
+
+.light{
+    font-size: 1.3em;
+}
+
+hr{
+    border: 1px solid #1e88e5;
+}
+
+.sombra-texto{
+    text-shadow: 2px 3px 3px #fff;
+}
+
+.banner-desk-and-tablet{
+    z-index: -1;position: absolute;
+}
+
+.banner-mobile-only-wordpress{
+    background: url(../../img/aulas%20de%20coreano%20no%20Brasil_mobile.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: 355px 400px;
+}
+
+.sidenav-overlay {
+    z-index: 996
+}
