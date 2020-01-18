@@ -104,7 +104,8 @@
                     <div class="row center white">
                         <h5 class="header col s12 light">Venha estudar coreano divertidamente com os melhores instrutores, começe inscrevendo-se abaixo:</h5>
                     </div>
-                    <form class="col s12" method="post">
+                    <form class="col s12" method="post" action="/enviar">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="row">
                             <div class="input-field col l6 s12">
                                 <i class="material-icons prefix">account_circle</i>
