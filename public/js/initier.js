@@ -8,7 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 $(document).ready(function(){
+    M.AutoInit();
     $('.sidenav').sidenav().on('click tap', 'li a', () => {
         $('.sidenav').sidenav('close');
 });
+
+//$('select').formSelect();
 });
+
+
+

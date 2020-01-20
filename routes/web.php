@@ -20,7 +20,8 @@ Route::get('/', function () {
 });
 
 Route::post('/enviar', function(Illuminate\Http\Request $request){
-    #var_dump($request->all());
+
+#var_dump($request->all());
 
     //encapsula a instância do controller
     #$contato = new App/Contato();
@@ -34,14 +35,20 @@ Route::post('/enviar', function(Illuminate\Http\Request $request){
     $contato->email = $request->get('email');
     $contato->textarea = $request->get('textarea');
 
-    //salva os valores
-    $contato->save();
 
 
-    //chama o tipo de código salvo
-    echo "Sua mensagem foi salva com sucesso! Código: " . $contato->id;
+    if($contato != null)
+    {
+        //salva os valores
+        $contato->save();
+        //chama o tipo de código salvo
+        echo "Sua mensagem foi salva com sucesso! Código: " . $contato->id;
+    }
 
-
+    else
+    {
+        return view('/404');
+    }
 
 });
 
