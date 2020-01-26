@@ -15,6 +15,8 @@ use SistemaLaravel\Contato;
 |
 */
 
+/*
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -54,5 +56,13 @@ Route::post('/enviar', function(Illuminate\Http\Request $request){
 
 
 Route::get('/lista', function () {
-    return view('lista', array('contatos' => Contato::all()));
+    return view('lista', array('contatos' => Contato::all()
+    )
+    );
 });
+
+*/
+
+Route::get('/', 'ContatoController@index');
+Route::post('/enviar', 'ContatoController@enviar');
+Route::get('/lista', 'ContatoController@lista');
