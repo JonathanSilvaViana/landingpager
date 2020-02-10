@@ -61,7 +61,7 @@
 
         <div class="navbar-fixed">
             <nav class="light-blue lighten-2" role="navigation">
-                <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Aula coreana</a>
+                <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Aula coreana</a>
                     <ul class="right hide-on-med-and-down link-menu-site">
                         <li class="sidenav-close"><a class="menu-options-landing-page-wp" href="https://www.kpopstation.com.br">Kpopstation</a></li>
                         <li class="sidenav-close"><a class="menu-options-landing-page-wp" href="#footer">Materiais</a></li>

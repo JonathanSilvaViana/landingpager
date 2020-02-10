@@ -71,6 +71,40 @@ hr{
     background-size: 355px 400px;
 }
 
+.banner-mobile-only-wordpress-sucesso{
+    background: url(../../img/aulas%20de%20coreano%20no%20Brasil_mobile_sucesso.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: 355px 400px;
+}
+
+@media only screen and (min-width : 601px) and (max-width : 1260px) {
+    .toast {
+        width: 100%;
+        border-radius: 0;} }
+
+@media only screen and (min-width : 1261px) {
+    .toast {
+        width: 100%;
+        border-radius: 0; } }
+
+@media only screen and (min-width : 601px) and (max-width : 1260px) {
+    #toast-container {
+        min-width: 100%;
+        bottom: 0%;
+        top: 90%;
+        right: 0%;
+        left: 0%;} }
+
+@media only screen and (min-width : 1261px) {
+    #toast-container {
+        min-width: 100%;
+        bottom: 0%;
+        top: 90%;
+        right: 0%;
+        left: 0%; } }
+
 .sidenav-overlay {
     z-index: 996
 }
@@ -93,3 +127,6 @@ hr{
     font-size: 1em !important;
 }
 
+.div-sucesso h1{
+    font-size: 3em !important;
+}

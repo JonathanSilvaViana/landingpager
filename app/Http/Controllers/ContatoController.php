@@ -5,6 +5,7 @@ namespace SistemaLaravel\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use SistemaLaravel\Contato;
+use App\NotificarEmail;
 
 class ContatoController extends Controller
 {
@@ -18,7 +19,7 @@ class ContatoController extends Controller
         return view('welcome');
     }
 
-    public function enviar(Request $request, Contato $contato)
+    public function enviar(Request $request, Contato $contato, \App\NotificacaoInterface $notificar)
     {
         $contato = new Contato();
 
@@ -31,6 +32,10 @@ class ContatoController extends Controller
         $contato->save();
 
         echo "Sua mensagem foi armazenada com sucesso! Código: " . $contato->id;
+
+        //Notificando via e-mail
+
+        $notificar->notificar();
     }
 
     /**
@@ -104,5 +109,15 @@ class ContatoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function sucesso()
+    {
+        return view('sucesso');
+    }
+
+    public function checaquemevoce()
+    {
+
     }
 }

@@ -63,6 +63,8 @@ Route::get('/lista', function () {
 
 */
 
+Route::get('/sucesso', 'ContatoController@sucesso');
+
 Route::get('/', 'ContatoController@index');
 Route::post('/enviar', 'ContatoController@enviar');
 Route::get('/lista', 'ContatoController@lista');
