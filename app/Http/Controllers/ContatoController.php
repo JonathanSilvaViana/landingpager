@@ -120,4 +120,9 @@ class ContatoController extends Controller
     {
 
     }
+
+    public function tryagain()
+    {
+        return view('tryagain');
+    }
 }

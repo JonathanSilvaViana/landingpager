@@ -79,6 +79,14 @@ hr{
     background-size: 355px 400px;
 }
 
+.banner-mobile-only-wordpress-tryagain{
+    background: url(../../img/aulas%20de%20coreano%20no%20Brasil_mobile_tryagain.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: 355px 400px;
+}
+
 @media only screen and (min-width : 601px) and (max-width : 1260px) {
     .toast {
         width: 100%;
@@ -129,4 +137,8 @@ hr{
 
 .div-sucesso h1{
     font-size: 3em !important;
+}
+
+.div-tryagain h1{
+    font-size: 2em !important;
 }
