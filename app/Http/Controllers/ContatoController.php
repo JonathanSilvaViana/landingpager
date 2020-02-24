@@ -3,9 +3,11 @@
 namespace SistemaLaravel\Http\Controllers;
 
 use Illuminate\Http\Request;
+use SistemaLaravel\Http\Requests\ContatoEnviarRequest;
 use Illuminate\Support\Facades\App;
 use SistemaLaravel\Contato;
-use App\NotificarEmail;
+use SistemaLaravel\NotificarEmail;
+#use App\NotificacaoInterface;
 
 class ContatoController extends Controller
 {
@@ -19,7 +21,7 @@ class ContatoController extends Controller
         return view('welcome');
     }
 
-    public function enviar(Request $request, Contato $contato, \App\NotificacaoInterface $notificar)
+    public function enviar(Request $request, Contato $contato/*, NotificacaoInterface $notificar*/)
     {
         $contato = new Contato();
 
@@ -35,7 +37,7 @@ class ContatoController extends Controller
 
         //Notificando via e-mail
 
-        $notificar->notificar();
+        #$notificar->notificar();
     }
 
     /**

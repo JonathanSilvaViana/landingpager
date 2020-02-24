@@ -176,6 +176,7 @@ return [
         // SistemaLaravel\Providers\BroadcastServiceProvider::class,
         SistemaLaravel\Providers\EventServiceProvider::class,
         SistemaLaravel\Providers\RouteServiceProvider::class,
+        \SistemaLaravel\Providers\AppServiceProvider::class,
 
     ],
 
