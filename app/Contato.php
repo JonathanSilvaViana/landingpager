@@ -2,6 +2,7 @@
 
 namespace SistemaLaravel;
 
+use SistemaLaravel\Nivel;
 use Illuminate\Database\Eloquent\Model;
 
 class Contato extends Model
@@ -25,5 +26,12 @@ class Contato extends Model
     public function lista(){
         return view('lista', array('contatos' => Contato::all()));
     }*/
+
+
+    //após seed e migrate
+    public function nivel(){
+        return $this->belongsTo(Nivel::class);
+    }
+
 }
 

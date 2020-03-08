@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\App;
 use SistemaLaravel\Contato;
 use SistemaLaravel\NotificarEmail;
 #use App\NotificacaoInterface;
+use SistemaLaravel\Nivel;
 
 class ContatoController extends Controller
 {
@@ -29,6 +30,7 @@ class ContatoController extends Controller
         $contato->sobrenome = $request->get('sobrenome');
         $contato->whatsapp = $request->get('whatsapp');
         $contato->email = $request->get('email');
+        $contato->nivel_id = $request->get('nivel_id');
         $contato->textarea = $request->get('textarea');
 
         $contato->save();

@@ -75,8 +75,8 @@
                 <td>{{ $row->whatsapp }}</td>
                 <td>{{ $row->email }}</td>
                 <td class="mensagem-row">{{ $row->textarea }}</td>
-                <td alt="completar no bd">Sim/Não</td>
                 <td alt="completar no bd">N</td>
+                <td alt="completar no bd">{{ $row->nivel_id }}</td>
 
                 <td alt="completar no bd">
                     <div class="btn-group">

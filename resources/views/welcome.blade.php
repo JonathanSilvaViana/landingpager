@@ -148,6 +148,24 @@
                             </div>
                         </div>
 
+
+                        <div class="row">
+                            <div class="input-field col l12 s12">
+                                <div class="input-field col s12">
+                                 <i class="material-icons prefix">record_voice_over</i>
+                                    
+                                    <select id="nivel_id" name="nivel_id" class="form-control" required="true">
+                                        <option value="null" disabled selected>Selecione uma opção</option>
+                                        @foreach (SistemaLaravel\Nivel::all() as $nivel)
+                                        <option class="light-blue lighten-2" value="{{ $nivel->id }}">{{ $nivel->nome }}</option>
+                                        @endforeach
+                                    </select>
+
+                                </div>         
+                            </div>
+                        </div>
+
+
                         <div class="row">
                             <div class="input-field col l12 s12">
                                 <i class="material-icons prefix">mode_edit</i>
