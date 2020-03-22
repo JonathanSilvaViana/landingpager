@@ -69,3 +69,11 @@ Route::get('/', 'ContatoController@index');
 Route::post('/enviar', 'ContatoController@enviar');
 Route::get('/lista', 'ContatoController@lista');
 Route::get('/tente_novamente', 'ContatoController@tryagain');
+#talvez, seja necessário comentar ou refatorar o três caminhos abaixo.
+Route::get('auth/login', ['as' => 'auth.form', 'uses' => 'Auth\AuthController@getLogin']);
+Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@getLogout']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

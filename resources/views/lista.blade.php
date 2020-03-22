@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <title>backend</title>
 
     <!-- Latest compiled and minified CSS -->
@@ -56,7 +57,6 @@
             <th>Whatsapp</th>
             <th>E-mail</th>
             <th>Mensagem</th>
-            <th>Matriculado</th>
             <th>Nível</th>
             <th>Ver +</th>
         </tr>
@@ -64,19 +64,42 @@
         <tbody>
         @foreach($contatos as $row)
 
-
-
                 <tr>
-
-
 
                 <th scope="row">{{ $row->id }}</th>
                 <td>{{ $row->nome }} {{ $row->sobrenome }}</td>
                 <td>{{ $row->whatsapp }}</td>
                 <td>{{ $row->email }}</td>
                 <td class="mensagem-row">{{ $row->textarea }}</td>
-                <td alt="completar no bd">N</td>
-                <td alt="completar no bd">{{ $row->nivel_id }}</td>
+                <td alt="completar no bd nivel-{{ $row->nivel_id }}" title="completar no bd nivel-{{ $row->nivel_id }}">
+                
+                    @if($row->nivel_id == 1)
+                    
+                        Iniciante
+
+                    @elseif($row->nivel_id == 2)
+
+                        Básico
+
+                    @elseif($row->nivel_id == 3)
+
+                        Intermediário
+                        
+                    @elseif($row->nivel_id == 4)
+
+                        Avançado
+
+                    @elseif($row->nivel_id == 5)
+
+                        TOPIK   
+
+                    @else
+
+                        404
+
+                    @endif
+
+                </td>
 
                 <td alt="completar no bd">
                     <div class="btn-group">
@@ -87,8 +110,6 @@
                         </a>
                     </div>
                 </td>
-
-
 
                 <!--modal de cada aluno-->
 
@@ -120,37 +141,38 @@
 
                                     <br>
 
-                                    <li class="list-group-item">Matriculado(a):
-
-                                        <br>
-
-                                        <select class="custom-select">
-                                            <option selected>Selecione abaixo</option>
-                                            <option value="1">Sim</option>
-                                            <option value="2">Não</option>
-                                        </select>
-                                    </li>
-
-                                    <br>
-
                                     <li class="list-group-item">Nível:
 
-                                        <br>
+                                        @if($row->nivel_id == 1)
+                    
+                        Iniciante
 
-                                        <select class="custom-select">
-                                            <option selected>Selecione abaixo</option>
-                                            <option value="1">Básico</option>
-                                            <option value="2">Intermediário</option>
-                                            <option value="3">Avançado</option>
-                                        </select>
+                    @elseif($row->nivel_id == 2)
+
+                        Básico
+
+                    @elseif($row->nivel_id == 3)
+
+                        Intermediário
+                        
+                    @elseif($row->nivel_id == 4)
+
+                        Avançado
+
+                    @elseif($row->nivel_id == 5)
+
+                        TOPIK   
+
+                    @else
+
+                        404
+
+                    @endif
 
                                     </li>
                                 </ul>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                <button type="button" class="btn btn-primary">Alterar</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
