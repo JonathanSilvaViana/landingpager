@@ -142,3 +142,15 @@ hr{
 .div-tryagain h1{
     font-size: 2em !important;
 }
+
+#logo-container-font
+        {
+            font-size: 3rem !important;    
+        }
+.software-template-name
+        {
+            font-family: 'Poppins', sans-serif;
+        }
+.esconde{
+    display: none;
+}        
