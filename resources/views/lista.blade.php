@@ -135,7 +135,9 @@
         <td class="filter-cell whatsapp-{{$row->whatsapp}}">
                 {{ $row->whatsapp }}
                 <br>
-                <a class="waves-effect waves-light btn-small green">
+                <a class="waves-effect waves-light btn-small green"
+                href="https://api.whatsapp.com/send?phone={{ studly_case($row->whatsapp) }}&text=Ol%C3%A1%2C%20recebemos%20sua%20mensagem.%20Vamos%20estudar%20coreano%3F%20%F0%9F%98%84" 
+                target="_blank">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </td>
@@ -175,7 +177,6 @@
             </td>    
           </tr>
 
-
           @endforeach
         </tbody>
                  
@@ -187,14 +188,19 @@
       
       <div class="row center">
         
-        <strong>
-           
-        <a href="#" id="download-button" class="btn-large waves-effect waves-light green">
-            Export
-        <i class="fa-lg fas fa-file-excel"></i>
-        </a>
         
-        </strong>
+
+        <!-- Modal para imprimir -->
+<div id="modalPrint" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>Relação de estudantes</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+        
         
       </div>
       
@@ -206,7 +212,7 @@
         </a>
         <ul>
           <li><a class="btn-floating red"><i class="fa-lg fas fa-trash"></i></a></li>
-          <li><a class="btn-floating green"><i class="fa-lg fas fa-file-excel"></i></a></li>
+          <li><a href="#modalPrint" class="btn-floating green modal-trigger"><i class="fa-lg fas fa-file-excel"></i></a></li>
         </ul>
       </div>
       
@@ -285,6 +291,7 @@
 			$(document).ready(function(){
                 //$('.tooltipped').tooltip();
                 $('#filter-container').tableFilter({tableID: '#students', autofocus: true});
+                $('.modal').modal();
             });
             
             //remove o placeholder junto do label em pesquisar
