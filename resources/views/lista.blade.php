@@ -21,6 +21,10 @@
             text-overflow: ellipsis;
         }
   </style>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </head>
 <body>
   
@@ -107,9 +111,9 @@
      
       <table class="table table-striped user-table table-inverse highlight centered responsive-table striped green accent-2" id='students' style="width:100%;">
                 <!-- Table Headings -->
-                 <thead>
+                 <thead style="border-bottom: 3px solid #64ffda !important;" >
                    <tr class="white-text">
-                       <th>&nbsp;</th>
+                       <th>Escolher</th>
                        <th>ID</th>
                        <th>Nome</th>
                        <th>Whatsapp</th>
@@ -120,12 +124,52 @@
                  </thead>
                  
                  <tbody>
-                    @foreach($contatos as $row)           
-          <tr class="linha-table-{{ $row->id }}" id="linha-table-{{ $row->id }}">
+                  @foreach($contatos as $row)
+                  
+                  <script>
+
+/*$(".checkAllCheckboxes").click(function()
+{
+    $('input:checkbox').not(this).prop('checked', this.checked);
+    $('input:checkbox').each(function() {
+      if($(this).is(":checked")) 
+    {
+        $(this).parents('tr').addClass("checkbox_checked_row");
+    } 
+    else 
+    {
+        $(this).parents('tr').removeClass("checkbox_checked_row");
+    }
+         
+    });;
+});*/
+
+
+
+/*$('.checkbox-{{ $row->id }}').click(function(){
+    if($(this).is(":checked")) 
+    {
+        
+      console.log('checado');
+      $(this).parents('tr').addClass("esconde");
+        
+    } 
+    else 
+    {
+      console.log('não checado');
+      $(this).parents('tr').removeClass("esconde");
+        
+    }
+});*/
+
+
+                  </script>
+                               
+          <tr style="border-bottom: 2px solid #64ffda !important;" class="linha-table-{{ $row->id }}" id="linha-table-{{ $row->id }}">
             <td>
                 <p>
                   <label>
-                    <input type="checkbox"/>
+                  <input onclick="$(this).parents('tr').addClass('esconde');" class="checkbox-{{ $row->id }}" type="checkbox"/>
                     <span>&nbsp;</span>
                   </label>
                 </p>
@@ -174,8 +218,9 @@
 
             @endif
 
-            </td>    
+            </td>  
           </tr>
+
 
           @endforeach
         </tbody>
@@ -211,7 +256,9 @@
           <i class="large material-icons green-text">menu</i>
         </a>
         <ul>
-          <li><a class="btn-floating red"><i class="fa-lg fas fa-trash"></i></a></li>
+          <li><a class="btn-floating black lixeira"><i class="fa-lg fas fa-trash"></i></a></li>
+          <li><a class="btn-floating blue refresh"><i class="fa-lg fas fa-redo-alt"></i></a></li>
+          <li><a class="btn-floating red pdf"><i class="fa-lg fas fa-file-pdf"></i></a></li>
           <li><a href="#modalPrint" class="btn-floating green modal-trigger"><i class="fa-lg fas fa-file-excel"></i></a></li>
         </ul>
       </div>
@@ -282,8 +329,7 @@
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
   <script src="{{ asset('/js/lista.js') }}"></script>
   <script src="{{ asset('/js/tableFilter.js') }}"></script>
   		<script>
@@ -298,6 +344,17 @@
             $('#enunciado-localizar').click(function() {
             $(this).addClass('esconde');
             });
+
+            //esconde as tabelas selecionadas
+
+            $('.lixeira').click(function(){
+                        alert('clicou');
+                        console.log('clicou');
+                      });
+     
+     $('.refresh').click(function(){
+        location.reload(true);
+     });
 
 		</script>
     

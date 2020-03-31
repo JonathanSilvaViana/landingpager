@@ -1,4 +1,4 @@
-<?php echo "Groogle" ;?>
+<?php #echo "Groogle" ;?>
 
 <!doctype html>
 <!--<html lang="{{ app()->getLocale() }}">-->
