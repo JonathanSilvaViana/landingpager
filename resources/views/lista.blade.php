@@ -113,7 +113,7 @@
                 <!-- Table Headings -->
                  <thead style="border-bottom: 3px solid #64ffda !important;" >
                    <tr class="white-text">
-                       <th>Escolher</th>
+                       <th class="th-escolher">Escolher</th>
                        <th>ID</th>
                        <th>Nome</th>
                        <th>Whatsapp</th>
@@ -123,7 +123,7 @@
                    </tr>
                  </thead>
                  
-                 <tbody>
+                 <tbody class="tbody">
                   @foreach($contatos as $row)
                   
                   <script>
@@ -169,7 +169,7 @@
             <td>
                 <p>
                   <label>
-                  <input onclick="$(this).parents('tr').addClass('esconde');" class="checkbox-{{ $row->id }}" type="checkbox"/>
+                  <input onclick="$(this).parents('tr').addClass('esconde');" class="checkbox-{{ $row->id }} checkbox" type="checkbox"/>
                     <span>&nbsp;</span>
                   </label>
                 </p>
@@ -239,7 +239,7 @@
 <div id="modalPrint" class="modal modal-fixed-footer">
   <div class="modal-content">
     <h4>Relação de estudantes</h4>
-    <p>A bunch of text</p>
+    <p>Seleção abaixo</p>
   </div>
   <div class="modal-footer">
     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -329,7 +329,30 @@
 
 
   <!--  Scripts-->
-  
+  <script>
+    
+    //var tbody = table.getElementsByClassName('tbody');
+    var table = document.getElementsByTagName("table")[0];
+    var tbody = table.getElementsByTagName("tbody")[0];
+
+    tbody.onclick = function (e) {
+    e = e || window.event;
+    var data = [];
+    var target = e.srcElement || e.target;
+    while (target && target.nodeName !== "TR") {
+        target = target.parentNode;
+    }
+    if (target) {
+        var cells = target.getElementsByTagName("td");
+        for (var i = 0; i < cells.length; i++) {
+            data.push(cells[i].innerHTML);
+        }
+    }
+
+    //obter herança e enviar a table de excel e pdf
+    console.log(data);
+};
+  </script>
   <script src="{{ asset('/js/lista.js') }}"></script>
   <script src="{{ asset('/js/tableFilter.js') }}"></script>
   		<script>
@@ -352,9 +375,41 @@
                         console.log('clicou');
                       });
      
+     //atualiza
      $('.refresh').click(function(){
         location.reload(true);
      });
+
+     //selecionar todos
+
+    /* $('.th-escolher').click(function(){
+      var txtconfirmarSelecao = "Selecionar todos itens?";
+
+      var confirmarSelecao = confirm(txtconfirmarSelecao);
+
+      if(confirmarSelecao)
+      {
+        
+        //$('.checkbox').addClass('esconde');
+
+        console.log("true");
+      }
+      else
+      {
+        console.log("false");
+      }
+
+     });*/
+
+     //proteção de checkbox
+
+     $('.checkbox').on('click',function(){
+        if($('.checkbox:checked').length == $('.checkbox').length){
+            $('#select_all').prop('checked',true);
+        }else{
+            $('#select_all').prop('checked',false);
+        }
+      });
 
 		</script>
     
